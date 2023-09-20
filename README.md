@@ -1,27 +1,75 @@
-# React + TypeScript + Vite
+# E-Commerce Sample App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is created using [DummyJSON](https://dummyjson.com/docs).
 
-Currently, two official plugins are available:
+![E-Commerce](public/e-commerce.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+**Prerequisites:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**List the prerequisites required to run the project, such as:**
 
-- Configure the top-level `parserOptions` property like this:
+NodeJS: v14.17.3 (currently using)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Package Manager: Yarn (v1.22.19) / npm
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+**Dependencies**
+
+React (v.18)
+
+Node (Package Manager)
+
+Typescript (latest)
+
+Vite
+
+React Query
+
+Sass
+
+If you are using npm
+
+### `npm install`
+
+If you are using Yarn
+
+### `yarn install or yarn`
+
+## Available Scripts
+
+**Start development server on port 3000.**
+If you are using npm
+
+### `npm run dev`
+
+If you are using Yarn
+
+### `yarn run dev`
+
+##
+
+**Build for production:**
+
+If you are using npm
+
+### `npm run build`
+
+If you are using Yarn
+
+### `yarn build`
+
+##
+
+**Test for production:**
+
+If you are using npm
+
+### `npm run test`
+
+If you are using npm
+
+### `yarn test`
+
+Watching Tests
+
+### `npm run test –watch`

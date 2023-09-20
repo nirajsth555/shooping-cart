@@ -1,0 +1,90 @@
+.featured {
+  &__product {
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px rgba($black, 0.3);
+    transition: transform 0.3s ease-out;
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+
+    &:hover .featured__name {
+      font-weight: 600;
+    }
+    &:hover {
+      transition: transform 0.3s ease-in-out;
+      transform: translateY(-10px);
+      box-shadow: 8px 8px 18px rgba($primary, 0.3);
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(231, 231, 231);
+    flex-grow: 1;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $red;
+    color: $white;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 0 8px 8px 0;
+  }
+  &_img {
+    height: 200px;
+  }
+
+  &__data {
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  &__price {
+    color: #101010;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  &__cart {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    svg {
+      width: 20px;
+      height: 30px;
+    }
+
+    &:hover {
+      background-color: $grey;
+    }
+  }
+}
