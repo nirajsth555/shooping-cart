@@ -2,9 +2,6 @@
 
 This project is created using [DummyJSON](https://dummyjson.com/docs).
 
-![E-Commerce](public/e-commerce.png)
-
-
 **Prerequisites:**
 
 **List the prerequisites required to run the project, such as:**
@@ -37,7 +34,7 @@ If you are using Yarn
 
 ## Available Scripts
 
-**Start development server on port 3000.**
+**Start development server on port 5173.**
 If you are using npm
 
 ### `npm run dev`
