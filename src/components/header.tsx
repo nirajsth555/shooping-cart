@@ -1,6 +1,8 @@
+import { useGetCartProducts } from "../hooks/query/useCart";
 import CartImage from "./image/CartImage";
 
 export default function Header() {
+    const { data } = useGetCartProducts();
     return (
         <div className="nav">
             <div className="container">
@@ -10,7 +12,7 @@ export default function Header() {
                     </div>
                     <div className="store">
                         <CartImage />
-                        <div className="count">0</div>
+                        <div className="count">{data?.length || 0}</div>
                     </div>
                 </div>
             </div>

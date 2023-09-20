@@ -1,3 +1,4 @@
 export const queryKey = {
-    PRODUCTS: 'PRODUCTS'
+    PRODUCTS: 'PRODUCTS',
+    CART: "CART"
 }
