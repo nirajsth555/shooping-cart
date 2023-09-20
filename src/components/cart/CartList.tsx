@@ -53,10 +53,10 @@ export default function CartList({ product }: TCartListProps) {
                     Sub Total: NPR
                     {(product?.price * product?.quantity)}
                 </h5>
-                <h5>
+                {/* <h5>
                     Sub Total Discount: NPR
                     {(((product?.price * product?.discountPercentage) / 100) * product?.quantity).toFixed(2)}
-                </h5>
+                </h5> */}
             </div>
         </div>
     )

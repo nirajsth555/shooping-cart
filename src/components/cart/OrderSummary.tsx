@@ -1,18 +1,18 @@
 import { useGetCartProducts } from "../../hooks/query/useCart"
+import { ICartProductList } from "../../types";
 
 export default function OrderSummary() {
     const { data } = useGetCartProducts();
-    console.log(data);
 
     const grantTotal = data?.reduce(
-        (partialSum, a) => partialSum + a.quantity * a.price,
+        (partialSum: number, a: ICartProductList) => partialSum + a.quantity * a.price,
         0
     );
 
     const totalDiscount = data?.reduce(
-        (partialSum, a) =>
+        (partialSum: number, a: ICartProductList) =>
             partialSum +
-            (a?.quantity * ((a?.price * a?.discountPercentage) / 100).toFixed(2)),
+            (a?.quantity * ((a?.price * a?.discountPercentage) / 100)),
         0
     );
 
@@ -28,7 +28,7 @@ export default function OrderSummary() {
                     <b>${grantTotal?.toFixed(2)}</b>
                 </p>
                 <p>
-                    <span>Discount:</span> <b>${totalDiscount}</b>
+                    <span>Discount:</span> <b>${totalDiscount.toFixed(2)}</b>
                 </p>
             </div>
             <div className="order-total">

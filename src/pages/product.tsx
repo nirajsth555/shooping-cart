@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProductCard from "../components/product/card";
 import { useGetProductList } from "../hooks/query/useProduct";
 import { IProductListType } from "../types";
+import Loader from "../components/loader";
 
 export default function Product() {
     const [limit, setLimit] = useState(8);
@@ -16,6 +17,11 @@ export default function Product() {
         <div className="container">
             <div className="home">
                 <h2>Products</h2>
+                {isLoading && (
+                    <div className="loader-container">
+                        <Loader size="lg" />
+                    </div>
+                )}
                 <div className="card-container">
                     {
                         products?.map((element: IProductListType, index: number) => (
