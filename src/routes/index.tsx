@@ -1,8 +1,15 @@
 import { useRoutes } from "react-router-dom";
-import { publicRoutes } from "./PublicRoutes"
+import { publicRoutes } from "./PublicRoutes";
+import Header from "../components/header";
 
 export const AppRoutes = () => {
     const routes = [...publicRoutes];
     const element = useRoutes([...routes]);
-    return <>{element}</>
+    return (
+        <div className="App">
+            <Header />
+            {element}
+        </div>
+    )
+
 }

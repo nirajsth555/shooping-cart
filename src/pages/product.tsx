@@ -1,7 +1,17 @@
 export default function Product() {
     return (
-        <>
-            <h1> This is product page</h1>
-        </>
+        <div className="container">
+            <div className="home">
+                <h2>Products</h2>
+                <div className="card-container">
+
+                </div>
+                <div className="show-more">
+                    <button className="button button-primary">
+                        Show More
+                    </button>
+                </div>
+            </div>
+        </div>
     )
 }
