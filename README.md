@@ -2,8 +2,6 @@
 
 This project is created using [DummyJSON](https://dummyjson.com/docs).
 
-Website URL: (https://e-commerce-random.vercel.app/)
-
 ![E-Commerce](public/e-commerce.png)
 
 
