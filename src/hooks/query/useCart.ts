@@ -1,10 +1,11 @@
 import { useQueryClient, useMutation, useQuery } from "react-query";
-import { addToCart, decreaseProductQuantity, getCartProducts, updateProductQuantity } from "../../services/cart";
+import { addToCart, decreaseProductQuantity, getCartProducts, removeProductFromCart, updateProductQuantity } from "../../services/cart";
 import { queryKey } from "../../constants/queryKey";
+import { ICartProductList, IProductListType } from "../../types";
 
 export const useAddProductToCart = () => {
     const queryClient = useQueryClient();
-    const mutation = useMutation((product) => {
+    const mutation = useMutation((product: IProductListType) => {
         return addToCart(product)
     }, {
         onSuccess: () => {
@@ -26,7 +27,7 @@ export const useGetCartProducts = () => {
 
 export const useUpdateProductQuantity = () => {
     const queryClient = useQueryClient();
-    const mutation = useMutation((product) => {
+    const mutation = useMutation((product: ICartProductList) => {
         return updateProductQuantity(product)
     }, {
         onSuccess: () => {
@@ -40,8 +41,22 @@ export const useUpdateProductQuantity = () => {
 
 export const useDecreaseProductQuantity = () => {
     const queryClient = useQueryClient();
-    const mutation = useMutation((product) => {
+    const mutation = useMutation((product: ICartProductList) => {
         return decreaseProductQuantity(product)
+    }, {
+        onSuccess: () => {
+            queryClient.invalidateQueries(queryKey.CART)
+        }
+    });
+    return {
+        ...mutation
+    }
+}
+
+export const useRemoveProductFromCart = () => {
+    const queryClient = useQueryClient();
+    const mutation = useMutation((product: ICartProductList) => {
+        return removeProductFromCart(product)
     }, {
         onSuccess: () => {
             queryClient.invalidateQueries(queryKey.CART)

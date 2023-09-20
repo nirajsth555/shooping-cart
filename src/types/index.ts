@@ -9,4 +9,9 @@ export interface IProductListType {
     discountedPrice: number;
     cartQuantity: number;
     thumbnail: string;
+    stock: number;
+}
+
+export interface ICartProductList extends IProductListType {
+    quantity: number
 }

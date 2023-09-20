@@ -1,9 +1,15 @@
-import { useDecreaseProductQuantity, useUpdateProductQuantity } from "../../hooks/query/useCart";
+import { useDecreaseProductQuantity, useRemoveProductFromCart, useUpdateProductQuantity } from "../../hooks/query/useCart";
+import { ICartProductList } from "../../types";
 import DeleteImage from "../image/DeleteImage";
 
-export default function CartList({ product }: any) {
+type TCartListProps = {
+    product: ICartProductList
+}
+
+export default function CartList({ product }: TCartListProps) {
     const { mutateAsync: addQuantity } = useUpdateProductQuantity();
     const { mutateAsync: decreaseQuantity } = useDecreaseProductQuantity();
+    const { mutateAsync: removeProduct } = useRemoveProductFromCart();
     return (
         <div className="cardList">
             <div className="cardList-left">
@@ -11,7 +17,7 @@ export default function CartList({ product }: any) {
                     <div className="img-box">
                         <img src={product?.thumbnail} />
                     </div>
-                    <div className="remove">
+                    <div className="remove" onClick={() => removeProduct(product)}>
                         <DeleteImage />
                     </div>
                 </div>
