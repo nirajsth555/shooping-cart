@@ -28,7 +28,7 @@ export default function OrderSummary() {
                     <b>${grantTotal?.toFixed(2)}</b>
                 </p>
                 <p>
-                    <span>Discount:</span> <b>${totalDiscount.toFixed(2)}</b>
+                    <span>Discount:</span> <b>${totalDiscount?.toFixed(2)}</b>
                 </p>
             </div>
             <div className="order-total">
