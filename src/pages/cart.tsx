@@ -7,8 +7,8 @@ export default function Cart() {
     const { data } = useGetCartProducts();
 
     return (
-        <div className="container">
-            <div className="cart-details">
+        <div className="cart-details">
+            <div className="container">
                 <h4>Cart</h4>
                 <div className="cart-wrap">
                     <div className="cart-left">

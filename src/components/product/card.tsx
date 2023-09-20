@@ -18,19 +18,16 @@ export default function ProductCard({ product }: TProductCardProps) {
                         {product.discountPercentage}%OFF
                     </div>
                 }
-                <div
-                    className="featured__cart"
-                    title="Add to cart"
-                    onClick={() => addToCart(product)}
-                >
-                    <CartImage />
-                </div>
                 <img src={product.thumbnail}></img>
             </div>
 
             <div className="featured__data">
                 <h3 className="featured__name">{product.title}</h3>
-                <div className="featured__price">Rs.{product.price}</div>
+                <div className="featured__price">${product.price}</div>
+                <button className="button-add" onClick={() => addToCart(product)}>
+                    Add to Cart
+                    <CartImage />
+                </button>
             </div>
         </div>
     )

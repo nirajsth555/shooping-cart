@@ -35,10 +35,6 @@ export default function OrderSummary() {
                 <h6>Grant Total</h6>
                 <h6>${(grantTotal - totalDiscount)?.toFixed(2)}</h6>
             </div>
-
-            <button className="button button-primary">
-                Proceed to Checkout
-            </button>
         </div>
     )
 }

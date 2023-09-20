@@ -45,12 +45,12 @@ export default function CartList({ product }: TCartListProps) {
                             </button>
                         </div>
                     </div>
-                    <div className="price">Price: NPR {product?.price}</div>
+                    <div className="price">Price: ${product?.price}</div>
                 </div>
             </div>
             <div className="cardList-right">
                 <h5>
-                    Sub Total: NPR
+                    Sub Total: $
                     {(product?.price * product?.quantity)}
                 </h5>
                 {/* <h5>
