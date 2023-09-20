@@ -1,7 +1,23 @@
+import CartList from "../components/cart/CartList";
+import OrderSummary from "../components/cart/OrderSummary";
+import { useGetCartProducts } from "../hooks/query/useCart";
+
 export default function Cart() {
+    const { data } = useGetCartProducts();
+
     return (
-        <>
-            <h1> This is cart page</h1>
-        </>
+        <div className="container">
+            <div className="cart-details">
+                <h4>Cart</h4>
+                <div className="cart-wrap">
+                    <div className="cart-left">
+                        {data?.map(element => <CartList product={element} />)}
+                    </div>
+                    <div className="cart-right">
+                        <OrderSummary />
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
