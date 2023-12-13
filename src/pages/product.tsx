@@ -4,6 +4,7 @@ import { useGetProductList } from "../hooks/query/useProduct";
 import { IProductListType } from "../types";
 import Loader from "../components/loader";
 import CompoundCard from "../components/product/CompoundCard";
+import CartImage from "../components/image/CartImage";
 
 export default function Product() {
     const [limit, setLimit] = useState(8);
@@ -38,6 +39,12 @@ export default function Product() {
                                     <CompoundCard.Content tag="h3" clx='featured__name'>{element.title}</CompoundCard.Content>
                                     <CompoundCard.Title clx={'featured__name'} title={element.title} />
                                     <CompoundCard.Price clx="featured__price" price={element.price} />
+                                    <CompoundCard.Button
+                                        clx="button-add"
+                                        handleClick={() => { }}
+                                        title="Add to Cart"
+                                        image={<CartImage />}
+                                    />
                                 </CompoundCard.Content>
                             </CompoundCard>
                         ))
