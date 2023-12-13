@@ -3,6 +3,7 @@ import ProductCard from "../components/product/card";
 import { useGetProductList } from "../hooks/query/useProduct";
 import { IProductListType } from "../types";
 import Loader from "../components/loader";
+import CompoundCard from "../components/product/CompoundCard";
 
 export default function Product() {
     const [limit, setLimit] = useState(8);
@@ -25,7 +26,19 @@ export default function Product() {
                 <div className="card-container">
                     {
                         products?.map((element: IProductListType, index: number) => (
-                            <ProductCard key={index} product={element} />
+                            // <ProductCard key={index} product={element} />
+                            <CompoundCard clx='featured__product'>
+                                <CompoundCard.Content clx={'featured__box'}>
+                                    <CompoundCard.Content clx="featured__new">
+                                        {element.discountPercentage}%OFF
+                                    </CompoundCard.Content>
+                                    <CompoundCard.Image image={element.thumbnail} />
+                                </CompoundCard.Content>
+                                <CompoundCard.Content clx={'featured__data'}>
+                                    <CompoundCard.Title clx={'featured__name'} title={element.title} />
+                                    <CompoundCard.Price clx="featured__price" price={element.price} />
+                                </CompoundCard.Content>
+                            </CompoundCard>
                         ))
                     }
                 </div>
