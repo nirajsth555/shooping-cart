@@ -6,11 +6,11 @@ function CompoundCard({ clx, children }: any) {
     )
 }
 
-function CardContent({ clx, children }: any) {
+function CardContent({ clx, children, tag: Tag = "div" }: any) {
     return (
-        <div className={clx}>
+        <Tag className={clx}>
             {children}
-        </div>
+        </Tag>
     )
 }
 

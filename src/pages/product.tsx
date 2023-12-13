@@ -35,6 +35,7 @@ export default function Product() {
                                     <CompoundCard.Image image={element.thumbnail} />
                                 </CompoundCard.Content>
                                 <CompoundCard.Content clx={'featured__data'}>
+                                    <CompoundCard.Content tag="h3" clx='featured__name'>{element.title}</CompoundCard.Content>
                                     <CompoundCard.Title clx={'featured__name'} title={element.title} />
                                     <CompoundCard.Price clx="featured__price" price={element.price} />
                                 </CompoundCard.Content>
